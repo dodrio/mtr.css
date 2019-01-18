@@ -1,1 +1,33 @@
+<title>MTR.CSS - Hong Kong MTR Colors as CSS variables</title>
+<link rel=stylesheet href=layout.css>
 <link rel=stylesheet href=mtr.css>
+<main>
+  <header>Thank you for travelling on the MTR.</header>
+</main>
+<footer>This site is not affiliated with MTR Corp., HK, in any way.</footer>
+<cite>Colors are taken from the image shared in <a href=https://www.scmp.com/lifestyle/travel-leisure/article/2051751/why-every-hong-kong-mtr-station-different-colour-reason-may>this SCMP article from <time datetime="2017-07-13T17:43:00+08:00">July, 2017</time></a>
+<script>
+  const mainElement = document.querySelector('main');
+  const styleSheet = Array.from(document.styleSheets).find(({href}) => href.endsWith("mtr.css"));
+  const styleRule = Array.from(styleSheet.rules).find(({selectorText}) => selectorText == ":root");
+  const styleMap = (Array.from(styleRule.styleMap.entries()));
+  console.log(styleMap);
+  const colors = styleMap.reduce((C, [val, [color]]) => {
+    C[val] = (color + '').trim();
+    return C;
+  },{});
+  console.log(colors);
+  for ( const stationName of Object.keys(colors) ) {
+    const stationColor = colors[stationName];
+    mainElement.insertAdjacentHTML('beforeEnd', `
+      <article class="station color" style="background-color: ${stationColor};">
+        <span class=name>${titleCaseFromHyphenatedCSSVariable(stationName)}</span>
+      </article>
+    `);
+  }
+
+  function titleCaseFromHyphenatedCSSVariable(str) {
+    const words = str.split(/-/).filter(w => w.length);
+    return words.join(' ');
+  }
+</script>
