@@ -1,6 +1,7 @@
 body, :root {
   margin: 0;
   background: silver;
+  font-family: sans-serif;
 }
 
 header {
@@ -10,20 +11,25 @@ header {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  color: white;
+  font-size: 3.5em;
+  opacity: 0.3;
+  pointer-events: none;
 }
 
 main {
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 article.station {
-  width: 10em;
-  height: 10em;
+  box-sizing: border-box;
+  width: calc(33.3vw - 6px);
+  height: calc(33.3vw - 6px);
   background: blue;
   text-transform: capitalize;
-  font-family: sans-serif;
-  line-height: 10em;
+  line-height: calc(33.3vw - 6px);
   text-align: center;
 }
 
