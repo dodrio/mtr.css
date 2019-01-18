@@ -1,0 +1,23 @@
+{
+  "name": "mtr.css",
+  "version": "1.0.0",
+  "description": "Metro station colors as CSS variables",
+  "main": "index.js",
+  "scripts": {
+    "test": "serve -p 8080"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com//crislin2046/mtr.css"
+  },
+  "keywords": [
+    "hkmtr",
+    "mtr",
+    "metro",
+    "metro.css",
+    "mtr.css",
+    "css"
+  ],
+  "author": "@dosy",
+  "license": "MIT"
+}
