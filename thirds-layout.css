@@ -10,20 +10,18 @@ main {
   margin: 0.5em;
 }
 
-main a {
+form, input, button {
+  font-size: x-large;
 }
 
 label.station {
-  width: 33.3%;
-  height: 33.3%;
+  width: calc(33.3% - 6px);
+  height: calc(33.3vw - 6px);
   position: relative;
-  max-width: 100px;
-  max-height: 100px;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
   justify-content: center;
-  font-size: smaller;
 }
 
 label.station p {
