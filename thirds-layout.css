@@ -15,8 +15,8 @@ form, input, button {
 }
 
 label.station {
-  width: calc(33.3% - 6px);
-  height: calc(33.3vw - 6px);
+  width: 33vw;
+  height: 33vw;
   position: relative;
   display: flex;
   flex-direction: column;
